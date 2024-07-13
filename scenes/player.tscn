@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://5mqsjwbyk25v"]
+
+[ext_resource type="Texture2D" uid="uid://e3fegtq68krn" path="res://assets/sprites/players/Witches Pack/Blue_witch/B_witch_idle.png" id="1_67ocg"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_ja0ai"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3noix"]
+atlas = ExtResource("1_67ocg")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gy21l"]
+atlas = ExtResource("1_67ocg")
+region = Rect2(0, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dqv1"]
+atlas = ExtResource("1_67ocg")
+region = Rect2(0, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_op5kr"]
+atlas = ExtResource("1_67ocg")
+region = Rect2(0, 144, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_al74a"]
+atlas = ExtResource("1_67ocg")
+region = Rect2(0, 192, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkv8y"]
+atlas = ExtResource("1_67ocg")
+region = Rect2(0, 240, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_64e6x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3noix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gy21l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dqv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_op5kr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_al74a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkv8y")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0pu3q"]
+radius = 6.0
+height = 26.0
+
+[node name="player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_ja0ai")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_64e6x")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.24052
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_0pu3q")
