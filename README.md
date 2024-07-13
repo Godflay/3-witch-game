@@ -7,4 +7,3 @@ creativekind - https://creativekind.itch.io<br/>
 smithygames - https://smithygames.itch.io<br/>
 luizmelo - https://luizmelo.itch.io<br/>
 fliflifly - https://fliflifly.itch.io<br/>
-szadiart - https://szadiart.itch.io<br/>
