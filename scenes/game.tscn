@@ -2062,5 +2062,6 @@ limit_bottom = 350
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="cat" parent="." instance=ExtResource("4_4j6xc")]
-position = Vector2(66, 114)
+[node name="cat" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_4j6xc")]
+position = Vector2(65, 120)
+player = NodePath("../player")

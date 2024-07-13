@@ -99,13 +99,10 @@ frame = 1
 frame_progress = 0.1168
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-show_behind_parent = true
 position = Vector2(2, 0)
 shape = SubResource("CapsuleShape2D_cox80")
-disabled = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1

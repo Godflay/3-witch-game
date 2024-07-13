@@ -1,19 +1,33 @@
-extends Node2D
+extends CharacterBody2D
 
 const speed = 60
-var direction = 1
+var direction = {}
 
-@onready var raycast_right = $RayCastRight
-@onready var raycast_left = $RayCastLeft
+
+@export var player: Node2D
+@onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var area2d = $Area2D
+var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if raycast_right.is_colliding():
-		direction = 1
-		animated_sprite.flip_h = false
-	if raycast_left.is_colliding():
-		direction = -1
-		animated_sprite.flip_h = true
-	position.x += direction * speed * delta
+func _physics_process(_delta: float) -> void:
+	# add gravity
+	var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
+	
+	
+	var idle = nav_agent.is_navigation_finished()
+	
+	if idle == true:
+		direction = 0
+	else:
+		direction = to_local(nav_agent.get_next_path_position()).normalized()
+		velocity = direction * speed
+		move_and_slide()
+
+func makepath() -> void:
+	nav_agent.target_position = player.global_position
+	
+	print(direction)
+
+
+func _on_timer_timeout() -> void:
+	makepath()

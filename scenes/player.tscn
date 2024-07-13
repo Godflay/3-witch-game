@@ -58,10 +58,16 @@ radius = 6.0
 height = 26.0
 
 [node name="player" type="CharacterBody2D"]
+visibility_layer = 2
+position = Vector2(0, -16)
 collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_ja0ai")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 3
+visibility_layer = 2
+z_index = 2
 sprite_frames = SubResource("SpriteFrames_64e6x")
 animation = &"idle"
 autoplay = "idle"
