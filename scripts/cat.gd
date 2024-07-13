@@ -14,20 +14,31 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-#path finder stuff shamlessly copy pasted
+	#path finder stuff shamlessly copy pasted
 	var direction = to_local(nav_agent.get_next_path_position()).normalized()
-	#move
-	velocity = direction * speed
-	if velocity.x > 0:
-		animated_sprite.flip_h = false
-		animated_sprite.play("run")
-	elif velocity.x < 0:
-		animated_sprite.flip_h = true
-		animated_sprite.play("run")
-	else:
-		animated_sprite.play("idle")
 	
+	#move logic
+	if direction:
+		#if we did not reach the player
+		if nav_agent.is_navigation_finished() == false:
+			#we move
+			velocity = direction * speed
+			animated_sprite.play("run")
+		#if we did reach the player
+		elif nav_agent.is_navigation_finished() == true:
+			#we stop moving
+			velocity.y = 0
+			velocity.x = 0
+			animated_sprite.play("idle")
 	move_and_slide()
+
+	#flip sprite
+	if velocity.x > 0 and direction:
+		animated_sprite.flip_h = false
+	elif velocity.x < 0 and direction:
+		animated_sprite.flip_h = true
+	
+	print(direction)
 
 #this function updates the pathfinder 10 times/sec
 func _on_timer_timeout() -> void:
