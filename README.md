@@ -7,5 +7,5 @@ creativekind - https://creativekind.itch.io<br/>
 smithygames - https://smithygames.itch.io<br/>
 luizmelo - https://luizmelo.itch.io<br/>
 fliflifly - https://fliflifly.itch.io<br/>
-anokolisa - https://anokolisa.itch.io
-dornwenn - https://dornwenn.artstation.com/
+anokolisa - https://anokolisa.itch.io<br/>
+dornwenn - https://dornwenn.artstation.com/<br/>
