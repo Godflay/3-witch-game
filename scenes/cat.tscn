@@ -200,7 +200,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d2vtx")
 }],
-"loop": true,
+"loop": false,
 "name": &"sleep",
 "speed": 10.0
 }]
@@ -216,7 +216,7 @@ script = ExtResource("1_3y813")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_prg84")
-animation = &"run"
+animation = &"sleep"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -224,8 +224,11 @@ show_behind_parent = true
 position = Vector2(2, 0)
 shape = SubResource("CapsuleShape2D_cox80")
 disabled = true
+one_way_collision = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 0.5
+target_desired_distance = 0.1
 debug_enabled = true
 
 [node name="UpdateTimer" type="Timer" parent="."]
