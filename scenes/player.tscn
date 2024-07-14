@@ -133,8 +133,9 @@ z_index = 2
 sprite_frames = SubResource("SpriteFrames_64e6x")
 animation = &"idle"
 autoplay = "idle"
-offset = Vector2(0, -1)
+offset = Vector2(0, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(-1, -8)
 shape = SubResource("CapsuleShape2D_0pu3q")
+one_way_collision = true
