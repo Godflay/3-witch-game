@@ -1,8 +1,45 @@
-[gd_scene load_steps=20 format=3 uid="uid://5mqsjwbyk25v"]
+[gd_scene load_steps=30 format=3 uid="uid://5mqsjwbyk25v"]
 
 [ext_resource type="Texture2D" uid="uid://e3fegtq68krn" path="res://assets/sprites/players/Witches Pack/Blue_witch/B_witch_idle.png" id="1_67ocg"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ja0ai"]
+[ext_resource type="Texture2D" uid="uid://c2gfh8ge1p284" path="res://assets/sprites/players/Witches Pack/Blue_witch/B_witch_attack.png" id="2_lepw7"]
 [ext_resource type="Texture2D" uid="uid://bkib4cmst2qps" path="res://assets/sprites/players/Witches Pack/Blue_witch/B_witch_run.png" id="3_lhpln"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afpb8"]
+atlas = ExtResource("2_lepw7")
+region = Rect2(0, 0, 104, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtfd4"]
+atlas = ExtResource("2_lepw7")
+region = Rect2(0, 46, 104, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_laqyo"]
+atlas = ExtResource("2_lepw7")
+region = Rect2(0, 92, 104, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75wi4"]
+atlas = ExtResource("2_lepw7")
+region = Rect2(0, 138, 104, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld5ij"]
+atlas = ExtResource("2_lepw7")
+region = Rect2(0, 184, 104, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epqp1"]
+atlas = ExtResource("2_lepw7")
+region = Rect2(0, 230, 104, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ue4bc"]
+atlas = ExtResource("2_lepw7")
+region = Rect2(0, 276, 104, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fxat"]
+atlas = ExtResource("2_lepw7")
+region = Rect2(0, 322, 104, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obr8j"]
+atlas = ExtResource("2_lepw7")
+region = Rect2(0, 368, 104, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3noix"]
 atlas = ExtResource("1_67ocg")
@@ -62,6 +99,38 @@ region = Rect2(0, 336, 32, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_64e6x"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afpb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtfd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_laqyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75wi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ld5ij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epqp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ue4bc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fxat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obr8j")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3noix")
@@ -130,8 +199,9 @@ script = ExtResource("1_ja0ai")
 light_mask = 3
 visibility_layer = 2
 z_index = 2
+position = Vector2(32, 2)
 sprite_frames = SubResource("SpriteFrames_64e6x")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
 offset = Vector2(0, -12)
 
