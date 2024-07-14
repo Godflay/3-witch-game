@@ -199,10 +199,11 @@ script = ExtResource("1_ja0ai")
 light_mask = 3
 visibility_layer = 2
 z_index = 2
-position = Vector2(32, 2)
 sprite_frames = SubResource("SpriteFrames_64e6x")
 animation = &"attack"
 autoplay = "idle"
+frame = 8
+frame_progress = 1.0
 offset = Vector2(0, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
