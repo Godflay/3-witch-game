@@ -30,13 +30,15 @@ func _physics_process(delta: float) -> void:
 			velocity.y = 0
 			velocity.x = 0
 			animated_sprite.play("idle")
-			#await get_tree().create_timer(5.0).timeout
-			#print("waited 5 seconds, sleeping")
-			#animated_sprite.play("sleep")
-			#animated_sprite.pause()
 			#TODO: this code doesn't work. figure out how to swap idle animations...
-		elif nav_agent.is_target_reached() == true:
+			await get_tree().create_timer(5.0).timeout
+			print("waited 5 seconds, sleeping")
+			animated_sprite.sprite_frames.remove_animation("idle")
+			print("animation cleared")
 			animated_sprite.play("sleep")
+			animated_sprite.sprite_frames.get_animation_loop("sleep")
+			animated_sprite.sprite_frames.set_animation_loop("sleep", false)
+			
 	move_and_slide()
 
 	#flip sprite
