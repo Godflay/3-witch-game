@@ -83,7 +83,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -131,8 +131,9 @@ light_mask = 3
 visibility_layer = 2
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_64e6x")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
+offset = Vector2(0, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
