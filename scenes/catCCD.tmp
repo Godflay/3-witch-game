@@ -216,9 +216,8 @@ script = ExtResource("1_3y813")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_prg84")
-animation = &"run"
+animation = &"sleep"
 autoplay = "idle"
-frame_progress = 0.0656311
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 show_behind_parent = true
