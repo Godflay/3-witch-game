@@ -7,7 +7,7 @@ var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var player: Node2D
 
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
-@onready var animated_sprite = $AnimatedSprite2D
+@onready var animated_sprite:AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
 	#add gravity
@@ -30,6 +30,11 @@ func _physics_process(delta: float) -> void:
 			velocity.y = 0
 			velocity.x = 0
 			animated_sprite.play("idle")
+			#TODO: this code doesn't work. figure out how to swap idle animations...
+			if velocity.y and velocity.x == 0:
+				print("we're in the loop")
+				animated_sprite.stop()
+				animated_sprite.play("sleep")
 	move_and_slide()
 
 	#flip sprite
@@ -37,8 +42,6 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.flip_h = false
 	elif velocity.x < 0 and direction:
 		animated_sprite.flip_h = true
-	
-	print(direction)
 
 #this function updates the pathfinder 10 times/sec
 func _on_timer_timeout() -> void:
