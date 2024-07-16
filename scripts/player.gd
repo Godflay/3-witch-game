@@ -3,7 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animated_sprite: Sprite2D = $Sprite2D
+@onready var animated_player: AnimationPlayer = $AnimationPlayer
 @export var attacking = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -27,9 +28,9 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("a", "d")
 	if direction and attacking == false:
 		velocity.x = direction * SPEED
-		animated_sprite.play("run")
+		animated_player.play("run")
 	else:
-		animated_sprite.play("idle")
+		animated_player.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	#flip sprite when movie left or right
@@ -49,5 +50,5 @@ func _physics_process(delta: float) -> void:
 
 func attack():
 	attacking = true
-	animated_sprite.play("attack")
-	animated_sprite.set_offset(Vector2(30, 0))
+	animated_player.play("attack")
+	#animated_sprite.set_offset(Vector2(30, 0))
