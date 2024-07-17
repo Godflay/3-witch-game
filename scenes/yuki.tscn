@@ -1,0 +1,200 @@
+[gd_scene load_steps=22 format=3 uid="uid://cos0sg322k8el"]
+
+[ext_resource type="Texture2D" uid="uid://r7ub74x8s7xr" path="res://assets/sprites/npc/cats/yuki_idle/yuki_idle1.png" id="1_18t4p"]
+[ext_resource type="Script" path="res://scenes/yuki.gd" id="1_nsp0v"]
+[ext_resource type="Texture2D" uid="uid://dgwbndpgoq8jk" path="res://assets/sprites/npc/cats/yuki_idle/yuki_idle2.png" id="2_5es6v"]
+[ext_resource type="Texture2D" uid="uid://b78qo75f6a3oo" path="res://assets/sprites/npc/cats/yuki_idle/yuki_idle3.png" id="3_55qqe"]
+[ext_resource type="Texture2D" uid="uid://b3ebyevmotirx" path="res://assets/sprites/npc/cats/yuki_idle/yuki_idle4.png" id="4_q12jo"]
+[ext_resource type="Texture2D" uid="uid://pvagb5xwt5j6" path="res://assets/sprites/npc/cats/yuki_idle/yuki_idle5.png" id="5_mfyv0"]
+[ext_resource type="Texture2D" uid="uid://8wj1xnrw6hxa" path="res://assets/sprites/npc/cats/yuki_run/yuki_run1.png" id="6_sl8yb"]
+[ext_resource type="Texture2D" uid="uid://bdynmidxmxed" path="res://assets/sprites/npc/cats/yuki_run/yuki_run2.png" id="7_ef1yk"]
+[ext_resource type="Texture2D" uid="uid://cwcfeolxx03bn" path="res://assets/sprites/npc/cats/yuki_run/yuki_run3.png" id="8_44lo3"]
+[ext_resource type="Texture2D" uid="uid://cdrwriw3ehxes" path="res://assets/sprites/npc/cats/yuki_run/yuki_run4.png" id="9_l0hme"]
+[ext_resource type="Texture2D" uid="uid://c3ou7ddpcgwka" path="res://assets/sprites/npc/cats/yuki_run/yuki_run5.png" id="10_4ci02"]
+[ext_resource type="Script" path="res://scripts/StateManager.gd" id="11_dk12i"]
+[ext_resource type="Script" path="res://scripts/yuki_idle.gd" id="12_rpmjw"]
+[ext_resource type="Script" path="res://scripts/yuki_run.gd" id="13_v14cf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q0mwi"]
+radius = 7.0
+
+[sub_resource type="Animation" id="Animation_r0icj"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_0tebr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_37fc1"]
+resource_name = "run"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c3e2y"]
+_data = {
+"RESET": SubResource("Animation_0tebr"),
+"idle": SubResource("Animation_r0icj"),
+"run": SubResource("Animation_37fc1")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ieabj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_18t4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5es6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_55qqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q12jo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mfyv0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_sl8yb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ef1yk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_44lo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l0hme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4ci02")
+}],
+"loop": true,
+"name": &"run",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3insa"]
+radius = 27.0
+
+[node name="Yuki" type="CharacterBody2D" node_paths=PackedStringArray("run_node", "sprite")]
+script = ExtResource("1_nsp0v")
+run_node = NodePath("StateMachine/run")
+sprite = NodePath("AnimationPlayer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_q0mwi")
+disabled = true
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("10_4ci02")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c3e2y")
+}
+autoplay = "idle"
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("11_dk12i")
+initial_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="StateMachine"]
+script = ExtResource("12_rpmjw")
+
+[node name="run" type="Node" parent="StateMachine" node_paths=PackedStringArray("sprite")]
+script = ExtResource("13_v14cf")
+sprite = NodePath("../../AnimationPlayer")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ieabj")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="detectionarea" type="Area2D" parent="."]
+
+[node name="detection" type="CollisionShape2D" parent="detectionarea"]
+shape = SubResource("CircleShape2D_3insa")
+
+[connection signal="body_entered" from="detectionarea" to="." method="_on_detection_area_body_entered"]

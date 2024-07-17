@@ -9,7 +9,7 @@ var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 @onready var animated_sprite:AnimatedSprite2D = $AnimatedSprite2D
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 
 	#path finder stuff shamlessly copy pasted
 	var direction = to_local(nav_agent.get_next_path_position()).normalized()
@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		if nav_agent.is_navigation_finished() == false:
 			#we move
 			velocity = direction * speed
-			animated_sprite.play("run")
+			#animated_sprite.play("run")
 			#animated_tree.set("parameters/moving_anims/current_state/input_1/run", 1)
 			#current_anim = RUN
 			#animated_tree["parameters/conditions/is_moving"] = true
@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 			#we stop moving
 			velocity.y = 0
 			velocity.x = 0
-			animated_sprite.play("idle")	
+			#animated_sprite.play("idle")	
 			#TODO: this code doesn't work. figure out how to stop sleeping loop
 			#await get_tree().create_timer(5.0).timeout
 			#for some reason .stop just crashes the whole thing
