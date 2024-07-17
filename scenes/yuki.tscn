@@ -198,3 +198,4 @@ autoplay = "idle"
 shape = SubResource("CircleShape2D_3insa")
 
 [connection signal="body_entered" from="detectionarea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detectionarea" to="." method="_on_detection_area_body_exited"]
