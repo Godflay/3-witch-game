@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://pnj5x84rgsk2" path="res://assets/sprites/world/Final/brush.png" id="2_2b7nf"]
 [ext_resource type="PackedScene" uid="uid://5mqsjwbyk25v" path="res://scenes/player.tscn" id="3_ld36a"]
 [ext_resource type="PackedScene" uid="uid://ccr7bvu0wgc7k" path="res://scenes/cat.tscn" id="4_4j6xc"]
-[ext_resource type="PackedScene" uid="uid://cos0sg322k8el" path="res://scenes/yuki.tscn" id="5_j86ul"]
+[ext_resource type="PackedScene" uid="uid://b42ykcgrpdtxe" path="res://scenes/yuki.tscn" id="5_j86ul"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1mvgt"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)

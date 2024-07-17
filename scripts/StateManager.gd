@@ -20,6 +20,10 @@ func _process(delta):
 	if current_state:
 		current_state.Update(delta)
 
+func _physics_process(delta):
+	if current_state:
+		current_state.Physics_Update(delta)
+
 #region State Management
 #Use force_change_state cautiously, it immediately switches to a state regardless of any transitions.
 #This is used to force us into a 'death state' when killed

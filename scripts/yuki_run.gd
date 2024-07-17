@@ -2,22 +2,26 @@ extends State
 class_name yuki_run
 
 @export var speed := float(50)
-@export var sprite : AnimationPlayer
-@onready var yuki: CharacterBody2D = $"../.."
+@onready var sprite = $"../../AnimatedSprite2D"
 
+@onready var yuki: CharacterBody2D = $"../.."
+var player: CharacterBody2D
 
 func Enter():
+	player = get_tree().get_first_node_in_group("player") as CharacterBody2D
 	print("running")
 	sprite.play("run")
 	
-func Update(_delta):
+func Physics_Update(_delta):
 	print("getting player node")
-	var player = get_tree().get_first_node_in_group("player") as CharacterBody2D
-	var direction = player.position - yuki.position as Vector2
+	var direction = player.global_position - yuki.global_position
 	
-	yuki.velocity = direction.normalized() * speed
-	yuki.move_and_slide()
+	if direction.length() > 25:
+		yuki.velocity = direction.normalized() * speed
+	else:
+		yuki.velocity = Vector2()
 	print("moving")
-	if direction:
+	if direction.length() > 50:
 		print("are we moving")
-		state_transition.emit(self, "yuki_run")
+		state_transition.emit(self, "idle")
+
