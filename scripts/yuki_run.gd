@@ -1,7 +1,7 @@
 extends State
 class_name yuki_run
 
-@export var speed := float(50)
+@export var speed := float(60)
 @onready var sprite = $"../../AnimatedSprite2D"
 
 @onready var yuki: CharacterBody2D = $"../.."
@@ -18,10 +18,10 @@ func Physics_Update(_delta):
 	
 	if direction.length() > 25:
 		yuki.velocity = direction.normalized() * speed
+		print("moving")
 	else:
 		yuki.velocity = Vector2()
-	print("moving")
-	if direction.length() > 50:
-		print("are we moving")
+		print("are we no longer moving")
 		state_transition.emit(self, "idle")
+	#if direction.length() < 10:
 
