@@ -18,5 +18,5 @@ func Update(_delta:float):
 
 func Physics_Update(delta: float):
 	var direction = player.global_position - yuki.global_position
-	if direction.length() > 25:
+	if direction.length() > 0.5:
 		state_transition.emit(self, "run")

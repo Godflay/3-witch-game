@@ -16,12 +16,11 @@ func Physics_Update(_delta):
 	print("getting player node")
 	var direction = player.global_position - yuki.global_position
 	
-	if direction.length() > 25:
+	if direction.length() > 0.5:
 		yuki.velocity = direction.normalized() * speed
 		print("moving")
 	else:
 		yuki.velocity = Vector2()
 		print("are we no longer moving")
 		state_transition.emit(self, "idle")
-	#if direction.length() < 10:
 
