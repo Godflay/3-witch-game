@@ -1,6 +1,7 @@
-[gd_scene load_steps=36 format=3 uid="uid://ccr7bvu0wgc7k"]
+[gd_scene load_steps=37 format=3 uid="uid://ccr7bvu0wgc7k"]
 
 [ext_resource type="Texture2D" uid="uid://cce6mydk3hpm4" path="res://assets/sprites/npc/cats/Pet Cats Pack/Cat-2/Cat-2-Idle.png" id="1_a3clp"]
+[ext_resource type="Script" path="res://scripts/cat.gd" id="1_do6cu"]
 [ext_resource type="Texture2D" uid="uid://dk3tio74ggwym" path="res://assets/sprites/npc/cats/Pet Cats Pack/Cat-2/Cat-2-Run.png" id="3_34ee2"]
 [ext_resource type="Texture2D" uid="uid://c52af15ixkcst" path="res://assets/sprites/npc/cats/Pet Cats Pack/Cat-2/Cat-2-Laying.png" id="4_xqrcy"]
 [ext_resource type="Script" path="res://scripts/StateManager.gd" id="5_0bmcy"]
@@ -215,7 +216,7 @@ height = 14.0
 [node name="cat" type="CharacterBody2D"]
 collision_mask = 3
 wall_min_slide_angle = 0.0
-script = ExtResource("8_818ui")
+script = ExtResource("1_do6cu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_prg84")
@@ -246,13 +247,12 @@ initial_state = NodePath("idle")
 [node name="idle" type="Node" parent="StateManager"]
 script = ExtResource("6_274gv")
 
-[node name="sleeping" type="Node2D" parent="StateManager"]
-visible = false
-script = ExtResource("7_57qne")
-
-[node name="moving" type="Node2D" parent="StateManager"]
-visible = false
+[node name="run" type="Node" parent="StateManager"]
 script = ExtResource("8_818ui")
+speed = null
+
+[node name="sleep" type="Node" parent="StateManager"]
+script = ExtResource("7_57qne")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="animation_finished"]
 [connection signal="timeout" from="UpdateTimer" to="." method="_on_timer_timeout"]

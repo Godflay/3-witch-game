@@ -3,7 +3,6 @@ class_name yuki_run
 
 @export var speed := float(60)
 @onready var sprite = $"../../AnimatedSprite2D"
-
 @onready var yuki: CharacterBody2D = $"../.."
 var player: CharacterBody2D
 
