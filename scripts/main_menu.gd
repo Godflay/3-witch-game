@@ -11,19 +11,21 @@ class_name main_menu
 
 func _ready():
 	translateUI()
-	play.button_down.connect(on_play)
-	quit.button_down.connect(on_quit)
-	_on_play_mouse_entered()
-	_on_language_mouse_entered()
-	_on_quit_mouse_entered()
-	_on_quit_pressed()
-	_on_play_pressed()
+	handle_connections()
 
 func on_play() -> void:
 	get_tree().change_scene_to_packed(start_level)
 
+func on_language():
+	print("clicked on languages")
+
 func on_quit() -> void:
 	get_tree().quit()
+
+func handle_connections() -> void:
+	play.button_up.connect(on_play)
+	language.button_up.connect(on_language)
+	quit.button_up.connect(on_quit)
 
 func translateUI():
 	play.text = tr("PLAY_BUTTON")
@@ -31,27 +33,19 @@ func translateUI():
 	language.text = tr("LANGUAGE")
 
 func _on_play_mouse_entered() -> void:
-	print("mouse enter play, playing")
-	if _on_play_mouse_entered:
-		select.play()
-
+	select.play()
 
 func _on_quit_mouse_entered() -> void:
-	print("mouse enter quit, playing")
-	if _on_quit_mouse_entered:
-		select.play()
+	select.play()
 
 func _on_language_mouse_entered() -> void:
-	print("mouse enter languages, playing")
-	if _on_language_mouse_entered:
-		select.play()
+	select.play()
 
 func _on_quit_pressed() -> void:
-	print("quit is pressed, play and leave")
 	click.play()
-
 
 func _on_play_pressed() -> void:
-	print("play is pressed, play")
 	click.play()
 
+func _on_language_pressed() -> void:
+	click.play()

@@ -93,5 +93,6 @@ stream = ExtResource("5_oasgs")
 [connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/PLAY" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/PLAY" to="." method="_on_play_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/LANGUAGE" to="." method="_on_language_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/LANGUAGE" to="." method="_on_language_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/QUIT" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/QUIT" to="." method="_on_quit_pressed"]
