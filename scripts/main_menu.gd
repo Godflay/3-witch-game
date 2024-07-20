@@ -46,4 +46,4 @@ func _on_play_pressed() -> void:
 	click.play()
 
 func _on_language_mouse_entered() -> void:
-	click.play()
+	select.play()
