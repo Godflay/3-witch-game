@@ -18,4 +18,5 @@ func Physics_Update(delta: float):
 	if direction.length() > 2:
 		state_transition.emit(self, "run")
 	else:
+		await get_tree().create_timer(5.0).timeout
 		state_transition.emit(self, "sleep")
