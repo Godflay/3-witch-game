@@ -9,6 +9,7 @@ class_name main_menu
 
 
 func _ready():
+	translateUI()
 	play.button_down.connect(on_play)
 	quit.button_down.connect(on_quit)
 	_on_play_mouse_entered()
@@ -22,6 +23,9 @@ func on_play() -> void:
 func on_quit() -> void:
 	get_tree().quit()
 
+func translateUI():
+	play = tr("PLAY_BUTTON")
+	quit = tr("QUIT_BUTTON")
 
 func _on_play_mouse_entered() -> void:
 	select.play()

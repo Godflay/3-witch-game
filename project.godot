@@ -43,6 +43,10 @@ attack={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://translation/local_strings.de.translation", "res://translation/local_strings.en.translation", "res://translation/local_strings.fr.translation")
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
