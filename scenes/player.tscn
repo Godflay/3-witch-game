@@ -365,3 +365,11 @@ libraries = {
 "": SubResource("AnimationLibrary_hm7tn")
 }
 autoplay = "idle"
+
+[node name="StateMachine" type="Node" parent="."]
+
+[node name="idle" type="Node" parent="StateMachine"]
+
+[node name="run" type="Node" parent="StateMachine"]
+
+[node name="attack" type="Node" parent="StateMachine"]

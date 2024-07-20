@@ -2049,7 +2049,6 @@ sources/1 = SubResource("TileSetAtlasSource_ifug3")
 
 [node name="player" parent="." instance=ExtResource("3_ld36a")]
 position = Vector2(121, 102)
-attacking = null
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(1, 2)
