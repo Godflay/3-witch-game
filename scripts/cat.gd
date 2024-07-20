@@ -1,17 +1,20 @@
 extends CharacterBody2D
-
-const speed = 65
-var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+class_name cat
 #this var needs to be linked with the player node in the inspector
 @export var player: Node2D
 
-
-@onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
-@onready var animated_sprite:AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite = $AnimatedSprite2D
 
 func _physics_process(_delta: float) -> void:
-	pass
+	move_and_slide()
+	
+	if velocity.length() > 0:
+		sprite.play("run")
+		
+	if velocity.x > 0:
+		sprite.flip_h = false
+	elif velocity.x < 0:
+		sprite.flip_h = true
 	#path finder stuff shamlessly copy pasted
 	#var direction = to_local(nav_agent.get_next_path_position()).normalized()
 	

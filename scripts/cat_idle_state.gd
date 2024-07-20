@@ -15,7 +15,7 @@ func Update(_delta:float):
 
 func Physics_Update(delta: float):
 	var direction = player.global_position - ellie.global_position
-	if direction.length() > 0.5:
+	if direction.length() > 2:
 		state_transition.emit(self, "run")
 	else:
 		state_transition.emit(self, "sleep")

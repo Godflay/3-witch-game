@@ -213,10 +213,12 @@ animations = [{
 radius = 7.0
 height = 14.0
 
-[node name="cat" type="CharacterBody2D"]
+[node name="cat" type="CharacterBody2D" node_paths=PackedStringArray("player")]
+z_index = 1
 collision_mask = 3
 wall_min_slide_angle = 0.0
 script = ExtResource("1_do6cu")
+player = NodePath(".")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_prg84")
@@ -230,15 +232,6 @@ position = Vector2(2, 0)
 shape = SubResource("CapsuleShape2D_cox80")
 disabled = true
 one_way_collision = true
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 0.5
-target_desired_distance = 0.1
-debug_enabled = true
-
-[node name="UpdateTimer" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
 
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("5_0bmcy")
@@ -255,4 +248,3 @@ speed = null
 script = ExtResource("7_57qne")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="animation_finished"]
-[connection signal="timeout" from="UpdateTimer" to="." method="_on_timer_timeout"]

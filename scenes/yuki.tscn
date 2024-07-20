@@ -65,6 +65,7 @@ animations = [{
 radius = 27.0
 
 [node name="Yuki" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_7juny")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -92,6 +93,7 @@ frame = 3
 frame_progress = 0.770872
 
 [node name="detectionarea" type="Area2D" parent="."]
+visible = false
 
 [node name="detection" type="CollisionShape2D" parent="detectionarea"]
 shape = SubResource("CircleShape2D_3insa")
