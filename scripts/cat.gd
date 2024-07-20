@@ -8,7 +8,7 @@ class_name cat
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	
-	if velocity.length() > 0:
+	if velocity.length() > 0.5:
 		sprite.play("run")
 		
 	if velocity.x > 0:

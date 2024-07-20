@@ -5,7 +5,7 @@ class_name yukii
 func _physics_process(delta):
 	move_and_slide()
 	
-	if velocity.length() > 0:
+	if velocity.length() > 0.5:
 		sprite.play("run")
 		
 	if velocity.x > 0:

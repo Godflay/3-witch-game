@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="3Witches"
+config/name="3 Witches"
 run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://assets/sprites/players/Witches Pack/Blue_witch/icon.png"
 
 [input]
 
