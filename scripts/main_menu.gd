@@ -13,17 +13,17 @@ func _ready():
 	quit.button_down.connect(on_quit)
 	_on_play_mouse_entered()
 	_on_quit_mouse_entered()
+	_on_quit_pressed()
+	_on_play_pressed()
 
 func on_play() -> void:
-	_on_play_pressed()
 	get_tree().change_scene_to_packed(start_level)
 
 func on_quit() -> void:
-	_on_quit_pressed()
 	get_tree().quit()
 
 
-func _on_play_mouse_entered():
+func _on_play_mouse_entered() -> void:
 	select.play()
 
 
