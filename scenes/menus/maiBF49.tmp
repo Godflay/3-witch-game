@@ -90,4 +90,3 @@ stream = ExtResource("4_4abj0")
 stream = ExtResource("5_5m2i7")
 
 [connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/PLAY" to="." method="_on_play_mouse_entered"]
-[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/QUIT" to="." method="_on_quit_mouse_entered"]
