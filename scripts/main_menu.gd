@@ -14,6 +14,7 @@ func _ready():
 	play.button_down.connect(on_play)
 	quit.button_down.connect(on_quit)
 	_on_play_mouse_entered()
+	_on_language_mouse_entered()
 	_on_quit_mouse_entered()
 	_on_quit_pressed()
 	_on_play_pressed()
@@ -28,6 +29,7 @@ func translateUI():
 	play.text = tr("PLAY_BUTTON")
 	quit.text = tr("QUIT_BUTTON")
 	language.text = tr("LANGUAGE")
+
 func _on_play_mouse_entered() -> void:
 	select.play()
 
@@ -41,4 +43,7 @@ func _on_quit_pressed() -> void:
 
 
 func _on_play_pressed() -> void:
+	click.play()
+
+func _on_language_mouse_entered() -> void:
 	click.play()
