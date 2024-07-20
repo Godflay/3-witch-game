@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dx41ct4bdw80b"]
+[gd_scene load_steps=4 format=3 uid="uid://dx41ct4bdw80b"]
 
 [ext_resource type="Texture2D" uid="uid://62135clne3lq" path="res://assets/sprites/world/Final/Background_0.png" id="1_214ek"]
+[ext_resource type="Script" path="res://scripts/language_menu.gd" id="1_v06e0"]
 [ext_resource type="FontFile" uid="uid://dre57g4v3sr3y" path="res://assets/fonts/joystix monospace.otf" id="2_126mg"]
 
 [node name="language_menu" type="Control"]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_v06e0")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
