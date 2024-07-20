@@ -46,7 +46,6 @@ func translateUI():
 	quit.text = tr("QUIT_BUTTON")
 	language.text = tr("LANGUAGE")
 
-
 #functions to play SFX
 func _on_play_mouse_entered() -> void:
 	select.play()

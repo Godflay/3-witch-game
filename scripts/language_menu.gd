@@ -15,3 +15,12 @@ func _ready():
 func on_exit() -> void:
     exit_language_menu.emit()
     set_process(false)
+
+func on_english_button_up() -> void:
+ TranslationServer.set_locale("en")
+
+func on_french_button_up() -> void:
+ TranslationServer.set_locale("fr")
+
+func on_german_button_up() -> void:
+ TranslationServer.set_locale("de")

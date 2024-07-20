@@ -77,3 +77,7 @@ layout_mode = 2
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("2_126mg")
 text = "EXIT"
+
+[connection signal="button_up" from="MarginContainer/HBoxContainer/VBoxContainer/English" to="." method="on_english_button_up"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/VBoxContainer/French" to="." method="on_french_button_up"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/VBoxContainer/German" to="." method="on_german_button_up"]
