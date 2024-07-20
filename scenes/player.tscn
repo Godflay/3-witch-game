@@ -60,6 +60,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(33, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_x02sn"]
 resource_name = "attack"
@@ -110,6 +122,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(33, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_tljbk"]
@@ -162,6 +186,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, -4)]
 }
 
 [sub_resource type="Animation" id="Animation_1va6p"]
@@ -216,6 +252,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, -4)]
+}
 
 [sub_resource type="Animation" id="Animation_gob50"]
 resource_name = "run"
@@ -269,6 +317,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hm7tn"]
 _data = {
@@ -285,12 +345,13 @@ position = Vector2(0, -16)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_ja0ai")
+attacking = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 3
 visibility_layer = 3
 z_index = 1
-position = Vector2(1, -2)
+position = Vector2(33, 0)
 texture = ExtResource("1_67ocg")
 vframes = 6
 

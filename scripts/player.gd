@@ -14,6 +14,11 @@ func _process(delta):
 	if Input.is_action_just_pressed("attack"):
 		attack()
 
+func attack():
+	print("attacking")
+	attacking = true
+	animated_player.play("attack")
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -25,14 +30,15 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("a", "d")
-	if direction and attacking == false:
+	var direction := Input.get_axis("a", "d")	
+
+	if direction:
 		velocity.x = direction * SPEED
 		animated_player.play("run")
 	else:
 		animated_player.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
+
 	#flip sprite when movie left or right
 	if direction > 0:
 		animated_sprite.flip_h = false
@@ -45,10 +51,4 @@ func _physics_process(delta: float) -> void:
 		#	animated_sprite.play("idle")
 		#else:
 			#animated_sprite.play("run")
-
 	move_and_slide()
-
-func attack():
-	attacking = true
-	animated_player.play("attack")
-	animated_sprite.position.x = 30
