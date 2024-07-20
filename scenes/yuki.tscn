@@ -1,0 +1,102 @@
+[gd_scene load_steps=18 format=3 uid="uid://b42ykcgrpdtxe"]
+
+[ext_resource type="Script" path="res://scripts/yukii.gd" id="1_7juny"]
+[ext_resource type="Texture2D" uid="uid://r7ub74x8s7xr" path="res://assets/sprites/npc/cats/yuki_idle/yuki_idle1.png" id="1_18t4p"]
+[ext_resource type="Texture2D" uid="uid://dgwbndpgoq8jk" path="res://assets/sprites/npc/cats/yuki_idle/yuki_idle2.png" id="2_5es6v"]
+[ext_resource type="Texture2D" uid="uid://b78qo75f6a3oo" path="res://assets/sprites/npc/cats/yuki_idle/yuki_idle3.png" id="3_55qqe"]
+[ext_resource type="Texture2D" uid="uid://b3ebyevmotirx" path="res://assets/sprites/npc/cats/yuki_idle/yuki_idle4.png" id="4_q12jo"]
+[ext_resource type="Texture2D" uid="uid://pvagb5xwt5j6" path="res://assets/sprites/npc/cats/yuki_idle/yuki_idle5.png" id="5_mfyv0"]
+[ext_resource type="Texture2D" uid="uid://8wj1xnrw6hxa" path="res://assets/sprites/npc/cats/yuki_run/yuki_run1.png" id="6_sl8yb"]
+[ext_resource type="Texture2D" uid="uid://bdynmidxmxed" path="res://assets/sprites/npc/cats/yuki_run/yuki_run2.png" id="7_ef1yk"]
+[ext_resource type="Texture2D" uid="uid://cwcfeolxx03bn" path="res://assets/sprites/npc/cats/yuki_run/yuki_run3.png" id="8_44lo3"]
+[ext_resource type="Texture2D" uid="uid://cdrwriw3ehxes" path="res://assets/sprites/npc/cats/yuki_run/yuki_run4.png" id="9_l0hme"]
+[ext_resource type="Texture2D" uid="uid://c3ou7ddpcgwka" path="res://assets/sprites/npc/cats/yuki_run/yuki_run5.png" id="10_4ci02"]
+[ext_resource type="Script" path="res://scripts/StateManager.gd" id="11_dk12i"]
+[ext_resource type="Script" path="res://scripts/yuki_idle.gd" id="12_rpmjw"]
+[ext_resource type="Script" path="res://scripts/yuki_run.gd" id="13_v14cf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q0mwi"]
+radius = 7.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ieabj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_18t4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5es6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_55qqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q12jo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mfyv0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_sl8yb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ef1yk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_44lo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l0hme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4ci02")
+}],
+"loop": true,
+"name": &"run",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3insa"]
+radius = 27.0
+
+[node name="Yuki" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_7juny")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_q0mwi")
+disabled = true
+one_way_collision = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("11_dk12i")
+initial_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("yuki")]
+script = ExtResource("12_rpmjw")
+yuki = NodePath("../..")
+
+[node name="run" type="Node" parent="StateMachine"]
+script = ExtResource("13_v14cf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ieabj")
+animation = &"run"
+autoplay = "idle"
+frame = 3
+frame_progress = 0.770872
+
+[node name="detectionarea" type="Area2D" parent="."]
+visible = false
+
+[node name="detection" type="CollisionShape2D" parent="detectionarea"]
+shape = SubResource("CircleShape2D_3insa")
+
+[connection signal="body_entered" from="detectionarea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detectionarea" to="." method="_on_detection_area_body_exited"]
