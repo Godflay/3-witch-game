@@ -24,8 +24,8 @@ func on_quit() -> void:
 	get_tree().quit()
 
 func translateUI():
-	play = tr("PLAY_BUTTON")
-	quit = tr("QUIT_BUTTON")
+	play.text = tr("PLAY_BUTTON")
+	quit.text = tr("QUIT_BUTTON")
 
 func _on_play_mouse_entered() -> void:
 	select.play()
