@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://62135clne3lq" path="res://assets/sprites/world/Final/Background_0.png" id="1_cl8n8"]
 [ext_resource type="FontFile" uid="uid://dre57g4v3sr3y" path="res://assets/fonts/joystix monospace.otf" id="2_i3cro"]
 [ext_resource type="AudioStream" uid="uid://d37ywheps3jyx" path="res://assets/audio/click.wav" id="4_4abj0"]
-[ext_resource type="AudioStream" uid="uid://ccui726e2w2wr" path="res://assets/audio/select.mp3" id="5_5m2i7"]
+[ext_resource type="AudioStream" uid="uid://bdjrxjv724qiu" path="res://assets/audio/select.wav" id="5_oasgs"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -87,7 +87,9 @@ text = "QUIT
 stream = ExtResource("4_4abj0")
 
 [node name="select" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_5m2i7")
+stream = ExtResource("5_oasgs")
 
 [connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/PLAY" to="." method="_on_play_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/PLAY" to="." method="_on_play_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/QUIT" to="." method="_on_quit_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/QUIT" to="." method="_on_quit_pressed"]
