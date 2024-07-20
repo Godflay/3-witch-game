@@ -31,19 +31,27 @@ func translateUI():
 	language.text = tr("LANGUAGE")
 
 func _on_play_mouse_entered() -> void:
-	select.play()
+	print("mouse enter play, playing")
+	if _on_play_mouse_entered:
+		select.play()
 
 
 func _on_quit_mouse_entered() -> void:
-	select.play()
+	print("mouse enter quit, playing")
+	if _on_quit_mouse_entered:
+		select.play()
 
+func _on_language_mouse_entered() -> void:
+	print("mouse enter languages, playing")
+	if _on_language_mouse_entered:
+		select.play()
 
 func _on_quit_pressed() -> void:
+	print("quit is pressed, play and leave")
 	click.play()
 
 
 func _on_play_pressed() -> void:
+	print("play is pressed, play")
 	click.play()
 
-func _on_language_mouse_entered() -> void:
-	select.play()
