@@ -24,3 +24,5 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.flip_h = true
 	move_and_slide()
 
+func player():
+	pass
