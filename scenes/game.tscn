@@ -2048,14 +2048,7 @@ sources/1 = SubResource("TileSetAtlasSource_ifug3")
 [node name="Game" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("3_ld36a")]
-position = Vector2(121, 102)
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(1, 2)
-zoom = Vector2(4, 4)
-limit_bottom = 350
-limit_smoothed = true
-position_smoothing_enabled = true
+position = Vector2(112, 109)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_j4bgt")

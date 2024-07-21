@@ -1,10 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://5mqsjwbyk25v"]
+[gd_scene load_steps=17 format=3 uid="uid://5mqsjwbyk25v"]
 
 [ext_resource type="Texture2D" uid="uid://e3fegtq68krn" path="res://assets/sprites/players/Witches Pack/Blue_witch/B_witch_idle.png" id="1_67ocg"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ja0ai"]
 [ext_resource type="Texture2D" uid="uid://c2gfh8ge1p284" path="res://assets/sprites/players/Witches Pack/Blue_witch/B_witch_attack.png" id="2_lepw7"]
 [ext_resource type="Texture2D" uid="uid://bkib4cmst2qps" path="res://assets/sprites/players/Witches Pack/Blue_witch/B_witch_run.png" id="3_lhpln"]
 [ext_resource type="Texture2D" uid="uid://bahwpqxrg1a5w" path="res://assets/sprites/players/Witches Pack/Blue_witch/B_witch_charge.png" id="5_gpvkg"]
+[ext_resource type="Script" path="res://scripts/StateManager.gd" id="6_4xcoh"]
+[ext_resource type="Script" path="res://scripts/player_idle.gd" id="7_5yroi"]
+[ext_resource type="Script" path="res://scripts/player_run.gd" id="8_qmnq7"]
+[ext_resource type="Script" path="res://scripts/player_attack.gd" id="9_i6fqi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0pu3q"]
 radius = 6.0
@@ -345,7 +349,6 @@ position = Vector2(0, -16)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_ja0ai")
-attacking = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 3
@@ -356,7 +359,7 @@ texture = ExtResource("1_67ocg")
 vframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 2)
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_0pu3q")
 one_way_collision = true
 
@@ -366,10 +369,20 @@ libraries = {
 }
 autoplay = "idle"
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("6_4xcoh")
+initial_state = NodePath("idle")
 
-[node name="idle" type="Node" parent="StateMachine"]
+[node name="idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("7_5yroi")
+player = NodePath("../..")
 
 [node name="run" type="Node" parent="StateMachine"]
+script = ExtResource("8_qmnq7")
 
 [node name="attack" type="Node" parent="StateMachine"]
+script = ExtResource("9_i6fqi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
