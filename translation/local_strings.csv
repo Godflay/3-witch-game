@@ -1,5 +1,9 @@
-key,en,fr,de
-PLAY_BUTTON,PLAY,JOUER,SPIELE
-LANGUAGE,LANGUAGE,LANGUE,SPRACHE
-QUIT_BUTTON,QUIT GAME,QUITTER LE JEU,SPIEL BEENDEN
-EXIT,BACK,RETOUR,ZURÜCK
+key,en,fr,de,,,,
+PLAY_BUTTON,PLAY,JOUER,SPIELE,,,,main menu
+LANGUAGE,LANGUAGE,LANGUE,SPRACHE,,,,strings
+QUIT_BUTTON,QUIT GAME,QUITTER LE JEU,SPIEL BEENDEN,,,,
+EXIT,BACK,RETOUR,ZURÜCK,,,,
+Text/11/text,Oh… It’s you… Have you heard what happened?,,,,,,
+Text/12/text,I’m afraid… It came back…,,,,,,
+Text/13/text,Yes… Yes… ,,,,,,
+Text/14/text,I can feel it… It’s getting close…,,,,,,

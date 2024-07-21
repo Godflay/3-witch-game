@@ -71,7 +71,6 @@ script = ExtResource("1_7juny")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_q0mwi")
-disabled = true
 one_way_collision = true
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]

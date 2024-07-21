@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://boh7wifbydwx"
+
+[deps]
+
+files=["res://translation/dialogic_wizard_meeting_translation.en.translation", "res://translation/dialogic_wizard_meeting_translation.fr.translation", "res://translation/dialogic_wizard_meeting_translation.de.translation"]
+
+source_file="res://translation/dialogic_wizard_meeting_translation.csv"
+dest_files=["res://translation/dialogic_wizard_meeting_translation.en.translation", "res://translation/dialogic_wizard_meeting_translation.fr.translation", "res://translation/dialogic_wizard_meeting_translation.de.translation"]
+
+[params]
+
+compress=true
+delimiter=0

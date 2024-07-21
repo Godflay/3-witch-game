@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://diu5p1tqgdw5d"]
+[gd_scene load_steps=8 format=3 uid="uid://diu5p1tqgdw5d"]
 
 [ext_resource type="Texture2D" uid="uid://ccu5h218sg55i" path="res://assets/sprites/world/Pixel Art Platformer - Village Props v2.3.0/Texture/TX Tileset Ground.png" id="1_hakyb"]
 [ext_resource type="Texture2D" uid="uid://uvsqfh6dtu8y" path="res://assets/sprites/world/Pixel Art Platformer - Village Props v2.3.0/Texture/TX Village Props.png" id="2_scms6"]
 [ext_resource type="PackedScene" uid="uid://5mqsjwbyk25v" path="res://scenes/player.tscn" id="3_gqd5d"]
+[ext_resource type="PackedScene" uid="uid://bm8fhp816kkl3" path="res://scenes/old_wizard.tscn" id="4_abjuu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k28lm"]
 resource_name = "world"
@@ -6123,4 +6124,7 @@ layer_1/name = "hello"
 layer_1/tile_data = PackedInt32Array(-196611, 3932161, 3, -196609, 3932161, 0)
 
 [node name="player" parent="." instance=ExtResource("3_gqd5d")]
-position = Vector2(97, -2)
+position = Vector2(97, 4)
+
+[node name="old wizard" parent="." instance=ExtResource("4_abjuu")]
+position = Vector2(694, 17)

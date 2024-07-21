@@ -228,9 +228,8 @@ frame_progress = 0.14508
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 show_behind_parent = true
-position = Vector2(2, 0)
+position = Vector2(-5, 0)
 shape = SubResource("CapsuleShape2D_cox80")
-disabled = true
 one_way_collision = true
 
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
