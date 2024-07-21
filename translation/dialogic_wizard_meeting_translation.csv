@@ -1,5 +1,17 @@
 keys,en,fr,de
-Text/11/text,Oh... it's you again... Have you heard what happened?,“Oh… C’est toi…“,“Oh… Du bist es...“
+Text/11/text,Oh... it's you... Have you heard what happened?,“Oh… C’est toi…“,“Oh… Du bist es...“
 Text/12/text,I'm afraid... It came back...,“J’ai peur… qu’il soit de retour… “,“Ich fürchte… Es ist wieder da… “
-Text/13/text,Yes… Yes…,,
-Text/14/text,I can feel it... It's getting close...,,
+Text/13/text,Yes… Yes…,“Oui… Oui...“,“Ja… Ja…“
+Text/14/text,I can feel it... It's getting close...,“Je peux le sentir… Il s’approche...“,
+Text/15/text,W-What happened? What is getting close!?,“Q-Quoi? Qu’est-ce qui est arriver? Qu’est-ce qui s’approche!?“,
+Text/16/text,"An ancient creature somehow escaped the seal I had placed it in many, many years ago.",“Une créature ancienne s'est échappée du sceau dans lequel je l'avais placée il y a de très nombreuses années.“,
+Text/17/text,"Someone or something must be behind it, it's impossible.","“Quelqu’un ou quelque chose l’a probablement fait, car c’est impossible.“",
+Text/18/text,This creature escaped and attacked neighboring villages.,“Cette créature s'est enfuie et a attaqué les villages voisins.“,
+Text/19/text,"I would put a stop to it, however, I'm getting old...",,
+Text/20/text,I've taught you everything I know since you were young.,,
+Text/21/text,But I don't think you're strong enough on your own...,,
+Text/22/text,"You should probably go find your sisters... With their help, you might just stand a chance against it...",,
+Text/23/text,Before you leave on your quest to find this thing. I have a gift for you.,,
+Text/24/text,"Here, take this. My old grimoire. It will help you along the way.",,
+Text/25/text,"It will make your spells more powerful. It does other things too, but they will reveal themselves to you as you get stronger.",,
+Text/26/text,"Now, off you go! Take care!",,

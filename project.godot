@@ -25,7 +25,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"old_wizard": "res://dialogic/characters/old_wizard.dch"
+"old_wizard": "res://dialogic/characters/old_wizard.dch",
+"player": "res://dialogic/characters/player.dch"
 }
 directories/dtl_directory={
 "wizard_meeting": "res://dialogic/timelines/wizard_meeting.dtl"
@@ -56,7 +57,7 @@ translation/add_separator=false
 translation/intern/save_mode=0
 translation/intern/file_mode=1
 translation/intern/translation_folder="res://translation"
-translation/id_counter=19
+translation/id_counter=20
 translation/locales=["en", "de", "fr"]
 text/autopauses={}
 layout/style_list=[]
@@ -115,7 +116,7 @@ e={
 [internationalization]
 
 locale/translations=PackedStringArray("res://translation/local_strings.de.translation", "res://translation/local_strings.en.translation", "res://translation/local_strings.fr.translation", "res://translation/dialogic_character_translations.en.translation", "res://translation/dialogic_wizard_meeting_translation.en.translation", "res://translation/dialogic_wizard_meeting_translation.de.translation", "res://translation/dialogic_wizard_meeting_translation.fr.translation")
-locale/test="en"
+locale/test="fr"
 
 [rendering]
 

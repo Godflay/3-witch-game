@@ -1,4 +1,16 @@
-old_wizard: Oh... it's you again... Have you heard what happened? #id:11
+old_wizard: Oh... it's you... Have you heard what happened? #id:11
 old_wizard: I'm afraid... It came back... #id:12
 old_wizard: Yes… Yes… #id:13
 old_wizard: I can feel it... It's getting close... #id:14
+player: W-What happened? What is getting close!?  #id:15
+old_wizard: An ancient creature somehow escaped the seal I had placed it in many, many years ago. #id:16
+old_wizard: Someone or something must be behind it, it's impossible. #id:17
+old_wizard: This creature escaped and attacked neighboring villages. #id:18
+old_wizard: I would put a stop to it, however, I'm getting old... #id:19
+old_wizard: I've taught you everything I know since you were young. #id:20
+old_wizard: But I don't think you're strong enough on your own... #id:21
+old_wizard: You should probably go find your sisters... With their help, you might just stand a chance against it... #id:22
+old_wizard: Before you leave on your quest to find this thing. I have a gift for you. #id:23
+old_wizard: Here, take this. My old grimoire. It will help you along the way. #id:24
+old_wizard: It will make your spells more powerful. It does other things too, but they will reveal themselves to you as you get stronger. #id:25
+old_wizard: Now, off you go! Take care! #id:26
