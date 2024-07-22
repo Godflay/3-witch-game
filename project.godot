@@ -29,6 +29,9 @@ directories/dch_directory={
 "player": "res://dialogic/characters/player.dch"
 }
 directories/dtl_directory={
+"wizard_loop_1": "res://dialogic/timelines/wizard_loop_1.dtl",
+"wizard_loop_2": "res://dialogic/timelines/wizard_loop_2.dtl",
+"wizard_loop_3": "res://dialogic/timelines/wizard_loop_3.dtl",
 "wizard_meeting": "res://dialogic/timelines/wizard_meeting.dtl"
 }
 glossary/default_case_sensitive=true
