@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dh6e1y36f7c4m"
+
+[deps]
+
+files=["res://translation/dialogic_wizard_loop_2_translation.en.translation"]
+
+source_file="res://translation/dialogic_wizard_loop_2_translation.csv"
+dest_files=["res://translation/dialogic_wizard_loop_2_translation.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

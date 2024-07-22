@@ -6,10 +6,10 @@ uid="uid://bb28u072phl11"
 
 [deps]
 
-files=["res://translation/dialogic_character_translations.en.translation"]
+files=["res://translation/dialogic_character_translations.en.translation", "res://translation/dialogic_character_translations.fr.translation", "res://translation/dialogic_character_translations.de.translation"]
 
 source_file="res://translation/dialogic_character_translations.csv"
-dest_files=["res://translation/dialogic_character_translations.en.translation"]
+dest_files=["res://translation/dialogic_character_translations.en.translation", "res://translation/dialogic_character_translations.fr.translation", "res://translation/dialogic_character_translations.de.translation"]
 
 [params]
 

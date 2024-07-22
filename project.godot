@@ -60,8 +60,8 @@ translation/add_separator=false
 translation/intern/save_mode=0
 translation/intern/file_mode=1
 translation/intern/translation_folder="res://translation"
-translation/id_counter=20
-translation/locales=["en", "de", "fr"]
+translation/id_counter=23
+translation/locales=["de", "en", "fr"]
 text/autopauses={}
 layout/style_list=[]
 layout/default_style="Default"
@@ -118,8 +118,8 @@ e={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://translation/local_strings.de.translation", "res://translation/local_strings.en.translation", "res://translation/local_strings.fr.translation", "res://translation/dialogic_character_translations.en.translation", "res://translation/dialogic_wizard_meeting_translation.en.translation", "res://translation/dialogic_wizard_meeting_translation.de.translation", "res://translation/dialogic_wizard_meeting_translation.fr.translation")
-locale/test="fr"
+locale/translations=PackedStringArray("res://translation/dialogic_character_translations.en.translation", "res://translation/dialogic_wizard_meeting_translation.en.translation", "res://translation/dialogic_wizard_meeting_translation.de.translation", "res://translation/dialogic_wizard_meeting_translation.fr.translation", "res://translation/dialogic_character_translations.de.translation", "res://translation/dialogic_character_translations.fr.translation", "res://translation/dialogic_main_menu_translation.de.translation", "res://translation/dialogic_main_menu_translation.en.translation", "res://translation/dialogic_main_menu_translation.fr.translation", "res://translation/dialogic_wizard_loop_1_translation.en.translation", "res://translation/dialogic_wizard_loop_2_translation.en.translation", "res://translation/dialogic_wizard_loop_3_translation.en.translation")
+locale/test="en"
 
 [rendering]
 
