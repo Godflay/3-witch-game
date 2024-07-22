@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxe2arqsuj0cc"]
+[gd_scene load_steps=4 format=3 uid="uid://dxe2arqsuj0cc"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_5x6j5"]
 [ext_resource type="Texture2D" uid="uid://62135clne3lq" path="res://assets/sprites/world/Final/Background_0.png" id="1_cl8n8"]
 [ext_resource type="FontFile" uid="uid://dre57g4v3sr3y" path="res://assets/fonts/joystix monospace.otf" id="2_i3cro"]
-[ext_resource type="PackedScene" uid="uid://dx41ct4bdw80b" path="res://scenes/menus/language_menu.tscn" id="6_6rxq6"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -23,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_cl8n8")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,14 +34,14 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="GameTitle" type="VBoxContainer" parent="Margin"]
 layout_mode = 2
 theme_override_constants/separation = 80
 
-[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="Seperator" type="Control" parent="Margin/GameTitle"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Margin/GameTitle"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 16
@@ -52,30 +51,30 @@ text = "3 WITCH"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="Menu" type="HBoxContainer" parent="Margin"]
 layout_mode = 2
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin/Menu"]
 layout_mode = 2
 theme_override_constants/separation = 18
 alignment = 1
 
-[node name="PLAY" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="PLAY" type="Button" parent="Margin/Menu/VBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_i3cro")
 text = "PLAY_BUTTON
 "
 
-[node name="LANGUAGE" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="LANGUAGE" type="Button" parent="Margin/Menu/VBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_i3cro")
 text = "LANGUAGE
 "
 
-[node name="QUIT" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="QUIT" type="Button" parent="Margin/Menu/VBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 tooltip_text = "Quit to desktop?"
@@ -83,17 +82,59 @@ theme_override_fonts/font = ExtResource("2_i3cro")
 text = "QUIT_BUTTON
 "
 
+[node name="LANGUAGE" type="Control" parent="Margin"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin/LANGUAGE"]
+layout_mode = 2
+offset_left = 571.0
+offset_top = 275.0
+offset_right = 685.0
+offset_bottom = 495.0
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="English" type="Button" parent="Margin/LANGUAGE/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_i3cro")
+text = "English"
+
+[node name="Seperator" type="Control" parent="Margin/LANGUAGE/VBoxContainer"]
+layout_mode = 2
+
+[node name="French" type="Button" parent="Margin/LANGUAGE/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_i3cro")
+text = "Français"
+
+[node name="Seperator2" type="Control" parent="Margin/LANGUAGE/VBoxContainer"]
+layout_mode = 2
+
+[node name="German" type="Button" parent="Margin/LANGUAGE/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_i3cro")
+text = "Deutsch"
+
+[node name="Seperator3" type="Control" parent="Margin/LANGUAGE/VBoxContainer"]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="Margin/LANGUAGE/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_i3cro")
+text = "EXIT"
+
 [node name="click" type="AudioStreamPlayer2D" parent="."]
 
 [node name="select" type="AudioStreamPlayer2D" parent="."]
 
-[node name="language_menu" parent="." instance=ExtResource("6_6rxq6")]
-visible = false
-layout_mode = 1
-
-[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/PLAY" to="." method="_on_play_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/PLAY" to="." method="_on_play_pressed"]
-[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/LANGUAGE" to="." method="_on_language_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/LANGUAGE" to="." method="_on_language_pressed"]
-[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/QUIT" to="." method="_on_quit_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/QUIT" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Margin/Menu/VBoxContainer/PLAY" to="." method="_on_play_mouse_entered"]
+[connection signal="pressed" from="Margin/Menu/VBoxContainer/PLAY" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="Margin/Menu/VBoxContainer/LANGUAGE" to="." method="_on_language_mouse_entered"]
+[connection signal="pressed" from="Margin/Menu/VBoxContainer/LANGUAGE" to="." method="on_language_pressed"]
+[connection signal="mouse_entered" from="Margin/Menu/VBoxContainer/QUIT" to="." method="_on_quit_mouse_entered"]
+[connection signal="pressed" from="Margin/Menu/VBoxContainer/QUIT" to="." method="_on_quit_pressed"]
