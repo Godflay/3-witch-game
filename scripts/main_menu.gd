@@ -12,7 +12,7 @@ class_name mainmenu
 @onready var quit = $Margin/Menu/VBoxContainer/QUIT as Button
 @onready var language = $Margin/Menu/VBoxContainer/LANGUAGE as Button
 
-@onready var start_level = preload("res://scenes/game.tscn") as PackedScene
+@onready var start_level = preload("res://scenes/main_game.tscn") as PackedScene
 
 #audio stuff
 @onready var click = $click
@@ -44,9 +44,10 @@ func handle_connections() -> void:
 
 #function to handle the translation, is set to local language by default
 func translateUI():
-	play.text = tr("PLAY_BUTTON")
-	quit.text = tr("QUIT_BUTTON")
-	language.text = tr("LANGUAGE")
+	pass
+	#play.text = tr("PLAY_BUTTON")
+	#quit.text = tr("QUIT_BUTTON")
+	#language.text = tr("LANGUAGE")
 
 #functions to play SFX
 func _on_play_mouse_entered() -> void:
@@ -74,3 +75,17 @@ func on_language_pressed() -> void:
 func show_and_hide(first, second):
 	first.show()
 	second.hide()
+
+func on_english_pressed() -> void:
+	TranslationServer.set_locale("en")
+
+func on_french_pressed() -> void:
+	TranslationServer.set_locale("fr")
+
+
+func on_german_pressed() -> void:
+	TranslationServer.set_locale("de")
+
+
+func on_exit_pressed() -> void:
+	show_and_hide(menu, language_menu)

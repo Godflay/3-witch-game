@@ -71,7 +71,7 @@ text = "PLAY_BUTTON
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_i3cro")
-text = "LANGUAGE
+text = "LANGUAGE_BUTTON
 "
 
 [node name="QUIT" type="Button" parent="Margin/Menu/VBoxContainer"]
@@ -79,8 +79,7 @@ custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 tooltip_text = "Quit to desktop?"
 theme_override_fonts/font = ExtResource("2_i3cro")
-text = "QUIT_BUTTON
-"
+text = "QUIT_BUTTON"
 
 [node name="LANGUAGE" type="Control" parent="Margin"]
 visible = false
@@ -138,3 +137,7 @@ text = "EXIT"
 [connection signal="pressed" from="Margin/Menu/VBoxContainer/LANGUAGE" to="." method="on_language_pressed"]
 [connection signal="mouse_entered" from="Margin/Menu/VBoxContainer/QUIT" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="Margin/Menu/VBoxContainer/QUIT" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Margin/LANGUAGE/VBoxContainer/English" to="." method="on_english_pressed"]
+[connection signal="pressed" from="Margin/LANGUAGE/VBoxContainer/French" to="." method="on_french_pressed"]
+[connection signal="pressed" from="Margin/LANGUAGE/VBoxContainer/German" to="." method="on_german_pressed"]
+[connection signal="pressed" from="Margin/LANGUAGE/VBoxContainer/Exit" to="." method="on_exit_pressed"]
