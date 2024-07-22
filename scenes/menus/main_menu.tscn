@@ -64,22 +64,20 @@ alignment = 1
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_i3cro")
-text = "PLAY_BUTTON
-"
+text = "PLAY"
 
 [node name="LANGUAGE" type="Button" parent="Margin/Menu/VBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_i3cro")
-text = "LANGUAGE_BUTTON
-"
+text = "LANGUAGE"
 
 [node name="QUIT" type="Button" parent="Margin/Menu/VBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 tooltip_text = "Quit to desktop?"
 theme_override_fonts/font = ExtResource("2_i3cro")
-text = "QUIT_BUTTON"
+text = "QUIT"
 
 [node name="LANGUAGE" type="Control" parent="Margin"]
 visible = false
