@@ -9,13 +9,11 @@ func _process(delta):
 
 func run_dialogue(dialogue_string):
 	Dialogic.start(dialogue_string)
-	
 
-func _on_chatdetection_body_entered(body):
+func _on_area_2d_body_entered(body):
 	if body.has_method("player"):
 		player_in_area = true
 
-
-func _on_chatdetection_body_exited(body):
+func _on_area_2d_body_exited(body:Node2D) -> void:
 	if body.has_method("player"):
 		player_in_area = false

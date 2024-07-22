@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bm8fhp816kkl3"]
 
 [ext_resource type="Texture2D" uid="uid://cfef801sj6114" path="res://assets/sprites/npc/Wizard Pack/Wizard Pack/Idle.png" id="1_5rpbs"]
-[ext_resource type="Script" path="res://scripts/old_wizard.gd" id="1_t23vp"]
+[ext_resource type="Script" path="res://scripts/old_wizard.gd" id="1_x1aym"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e187k"]
 radius = 9.0
@@ -57,11 +57,11 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xs8xd"]
-radius = 45.0111
+[sub_resource type="CircleShape2D" id="CircleShape2D_unswe"]
+radius = 40.0125
 
 [node name="old wizard" type="CharacterBody2D"]
-script = ExtResource("1_t23vp")
+script = ExtResource("1_x1aym")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -16)
@@ -76,11 +76,11 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.406243
 
-[node name="chatdetection" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="chatdetection"]
-position = Vector2(0, -17)
-shape = SubResource("CircleShape2D_xs8xd")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_unswe")
 
-[connection signal="body_entered" from="chatdetection" to="." method="_on_chatdetection_body_entered"]
-[connection signal="body_exited" from="chatdetection" to="." method="_on_chatdetection_body_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
