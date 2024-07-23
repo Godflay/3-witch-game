@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -300.0
 @onready var sprite = $"../../AnimationPlayer"
 @onready var player: CharacterBody2D = $"../.."
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
+var current_attack: bool
 
 func Enter():
     sprite.play("run")
@@ -20,17 +21,12 @@ func Physics_Update(delta):
     player.velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
  var direction := Input.get_axis("a", "d")	
 
- if direction:
+ if direction and !current_attack:
     print("got input, moving")
     player.velocity.x = direction * SPEED
  else:
     player.velocity.x = move_toward(player.velocity.x, 0, SPEED)
     print("we're idle")
     state_transition.emit(self, "idle")
-
- if Input.is_action_just_pressed("attack"):
-    print("attacking")
-    state_transition.emit(self, "attack")
